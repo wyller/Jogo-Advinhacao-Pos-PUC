@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jogo-adivinhacao-backend
+  namespace: ms
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: microservico
+  template:
+    metadata:
+      labels:
+        app: microservico
+        version: "v1.0"
+    spec:
+      containers:
+      - name: jogo-adivinhacao-backend
+        image: wyller/jogo-advinhacao-pos-puc-backend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_DB
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_HOST
