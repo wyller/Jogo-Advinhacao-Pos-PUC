@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-frontend-service
+  namespace: ms
+spec:
+  selector:
+    app: nginx-frontend
+  ports:
+    - protocol: TCP
+      port: 80  # Porta exposta externamente
+      targetPort: 80  # Porta no container NGINX
+  type: LoadBalancer  # Exponha o serviço com um IP público (em nuvens como AWS, GCP, Azure)

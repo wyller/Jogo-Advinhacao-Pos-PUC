@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: postgres-config
-  namespace: ms  # Certifique-se de que o namespace seja o mesmo do backend
+  namespace: ms
 data:
   POSTGRES_DB: adivinhacao-backend
   POSTGRES_USER: postgres

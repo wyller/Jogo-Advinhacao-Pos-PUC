@@ -8,4 +8,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/mnt/data"  # Verifique se este caminho existe no nó
+    path: "/mnt/data"
