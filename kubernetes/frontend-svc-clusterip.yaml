@@ -8,6 +8,6 @@ spec:
     service: microservico
   ports:
     - protocol: TCP
-      port: 80  # Porta exposta pelo serviço
-      targetPort: 80  # Porta no container do frontend
-  type: ClusterIP  # O NGINX vai se comunicar com o frontend via ClusterIP
+      port: 80  
+      targetPort: 80  
+  type: ClusterIP  

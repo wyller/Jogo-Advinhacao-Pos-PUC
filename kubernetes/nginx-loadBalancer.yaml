@@ -8,6 +8,6 @@ spec:
     app: nginx-frontend
   ports:
     - protocol: TCP
-      port: 80  # Porta exposta externamente
-      targetPort: 80  # Porta no container NGINX
-  type: LoadBalancer  # Exponha o serviço com um IP público (em nuvens como AWS, GCP, Azure)
+      port: 80 
+      targetPort: 80  
+  type: LoadBalancer  
